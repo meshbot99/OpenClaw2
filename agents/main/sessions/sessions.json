@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "ceefbe69-8f50-43da-a498-811bd6483712",
-    "updatedAt": 1774887969757,
+    "updatedAt": 1774895196506,
     "systemSent": true,
     "abortedLastRun": false,
     "authProfileOverride": "openai:default",
@@ -168,13 +168,13 @@
       "version": 0
     },
     "status": "done",
-    "startedAt": 1774887967070,
+    "startedAt": 1774895194819,
     "modelProvider": "openai",
     "model": "gpt-4.1",
     "contextTokens": 1047576,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1774887967065,
+      "generatedAt": 1774895194814,
       "sessionId": "ceefbe69-8f50-43da-a498-811bd6483712",
       "sessionKey": "agent:main:main",
       "provider": "openai",
@@ -194,9 +194,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 28260,
+        "chars": 28566,
         "projectContextChars": 13641,
-        "nonProjectContextChars": 14619
+        "nonProjectContextChars": 14925
       },
       "injectedWorkspaceFiles": [
         {
@@ -414,29 +414,29 @@
         ]
       }
     },
-    "inputTokens": 9112,
+    "inputTokens": 9261,
     "outputTokens": 7,
     "cacheRead": 0,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0.09952000000000001,
-    "totalTokens": 9112,
+    "estimatedCostUsd": 0.15495600000000004,
+    "totalTokens": 9261,
     "totalTokensFresh": true,
     "lastTo": "heartbeat",
-    "endedAt": 1774887969685,
-    "runtimeMs": 2615
+    "endedAt": 1774895196475,
+    "runtimeMs": 1656
   },
   "agent:main:telegram:direct:8700085699": {
     "origin": {
       "label": "Nik Lok id:8700085699",
-      "provider": "telegram",
-      "surface": "telegram",
+      "provider": "webchat",
+      "surface": "webchat",
       "chatType": "direct",
       "from": "telegram:8700085699",
       "to": "telegram:8700085699",
       "accountId": "default"
     },
     "sessionId": "5fd9b36f-5381-4ebb-ad3c-ba9f428504f4",
-    "updatedAt": 1774889814460,
+    "updatedAt": 1774898576500,
     "deliveryContext": {
       "channel": "telegram",
       "to": "telegram:8700085699",
@@ -447,9 +447,6 @@
     "lastAccountId": "default",
     "systemSent": true,
     "abortedLastRun": false,
-    "authProfileOverride": "openai:default",
-    "authProfileOverrideSource": "auto",
-    "authProfileOverrideCompactionCount": 0,
     "chatType": "direct",
     "sessionFile": "/Users/meshbot/.openclaw/agents/main/sessions/5fd9b36f-5381-4ebb-ad3c-ba9f428504f4.jsonl",
     "skillsSnapshot": {
@@ -597,17 +594,14 @@
       "version": 0
     },
     "status": "done",
-    "startedAt": 1774889811597,
-    "modelProvider": "openai",
-    "model": "gpt-4.1",
-    "contextTokens": 1047576,
+    "startedAt": 1774898567684,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1774889811571,
+      "generatedAt": 1774898567665,
       "sessionId": "5fd9b36f-5381-4ebb-ad3c-ba9f428504f4",
       "sessionKey": "agent:main:telegram:direct:8700085699",
-      "provider": "openai",
-      "model": "gpt-4.1",
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
       "workspaceDir": "/Users/meshbot/.openclaw/workspace",
       "bootstrapMaxChars": 20000,
       "bootstrapTotalMaxChars": 150000,
@@ -623,9 +617,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 28673,
+        "chars": 28915,
         "projectContextChars": 13641,
-        "nonProjectContextChars": 15032
+        "nonProjectContextChars": 15274
       },
       "injectedWorkspaceFiles": [
         {
@@ -735,8 +729,8 @@
         ]
       },
       "tools": {
-        "listChars": 1660,
-        "schemaChars": 7650,
+        "listChars": 1979,
+        "schemaChars": 8340,
         "entries": [
           {
             "name": "read",
@@ -767,6 +761,12 @@
             "summaryChars": 85,
             "schemaChars": 961,
             "propertiesCount": 12
+          },
+          {
+            "name": "cron",
+            "summaryChars": 3420,
+            "schemaChars": 690,
+            "propertiesCount": 13
           },
           {
             "name": "sessions_list",
@@ -843,14 +843,14 @@
         ]
       }
     },
-    "inputTokens": 170,
-    "outputTokens": 30,
-    "cacheRead": 8960,
-    "cacheWrite": 0,
-    "estimatedCostUsd": 0.041208,
-    "totalTokens": 9130,
+    "inputTokens": 8,
+    "outputTokens": 87,
+    "cacheRead": 0,
+    "cacheWrite": 17705,
+    "estimatedCostUsd": 0.11846999999999999,
     "totalTokensFresh": true,
-    "endedAt": 1774889814139,
-    "runtimeMs": 2542
+    "totalTokens": 17710,
+    "endedAt": 1774898570570,
+    "runtimeMs": 2886
   }
 }

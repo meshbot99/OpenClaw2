@@ -3,30 +3,43 @@
     "deviceId": "16e03aa82a763f9bfc64fbe0613c8954e37f5771f4de365fd798f9bb45ff4d5d",
     "publicKey": "2YDsm3iKRqB6b93uPWRv6nlid3nOxpsohI1wkgLJ-vA",
     "platform": "darwin",
-    "clientId": "openclaw-probe",
+    "clientId": "cli",
     "clientMode": "probe",
     "role": "operator",
     "roles": [
       "operator"
     ],
     "scopes": [
-      "operator.read"
+      "operator.read",
+      "operator.admin",
+      "operator.write",
+      "operator.approvals",
+      "operator.pairing"
     ],
     "approvedScopes": [
-      "operator.read"
+      "operator.read",
+      "operator.admin",
+      "operator.write",
+      "operator.approvals",
+      "operator.pairing"
     ],
     "tokens": {
       "operator": {
-        "token": "moSeFsphfxo1dTCmXWf2ob4ndaP7ZGNWbl-C19FIrp8",
+        "token": "me4i4iXPMtcukEGoNe-LadMxShd_D-WoSv3JasxpxXI",
         "role": "operator",
         "scopes": [
-          "operator.read"
+          "operator.admin",
+          "operator.approvals",
+          "operator.pairing",
+          "operator.read",
+          "operator.write"
         ],
-        "createdAtMs": 1774880498511
+        "createdAtMs": 1774880498511,
+        "rotatedAtMs": 1774895441822
       }
     },
     "createdAtMs": 1774880498511,
-    "approvedAtMs": 1774880498511
+    "approvedAtMs": 1774895441821
   },
   "e5718502b9ba2188b1c2b67c7986da45e6245bdaf36d1dea1cdf1e1c5c34d340": {
     "deviceId": "e5718502b9ba2188b1c2b67c7986da45e6245bdaf36d1dea1cdf1e1c5c34d340",

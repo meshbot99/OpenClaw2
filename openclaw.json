@@ -10,6 +10,14 @@
       "openai:default": {
         "provider": "openai",
         "mode": "api_key"
+      },
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      },
+      "gemini:default": {
+        "provider": "gemini",
+        "mode": "api_key"
       }
     }
   },
@@ -19,12 +27,34 @@
         "primary": "openai/gpt-4.1"
       },
       "models": {
-        "openai/gpt-5.4": {
-          "alias": "GPT"
-        },
-        "openai/gpt-4.1": {}
+        "openai/gpt-5.4": { "alias": "gpt-5.4" },
+        "openai/gpt-4.1": { "alias": "gpt-4.1" },
+        "openai/gpt-4.1-mini": { "alias": "gpt-4.1-mini" },
+        "anthropic/claude-opus-4-6": { "alias": "opus", "params": { "cacheRetention": "long" } },
+        "anthropic/claude-sonnet-4-6": { "alias": "sonnet", "params": { "cacheRetention": "short" } },
+        "anthropic/claude-haiku-4-5": { "alias": "haiku" },
+        "google/gemini-2.5-pro": { "alias": "gemini-2.5-pro" },
+        "google/gemini-2.5-flash": { "alias": "gemini-2.5-flash" },
+        "google/gemini-2.5-flash-lite": { "alias": "gemini-2.5-lite" }
       },
-      "workspace": "/Users/meshbot/.openclaw/workspace"
+      "workspace": "/Users/meshbot/.openclaw/workspace",
+      "heartbeat": {
+        "every": "55m",
+        "model": "google/gemini-2.5-flash-lite",
+        "session": "main",
+        "isolatedSession": true,
+        "lightContext": true,
+        "activeHours": {
+          "start": "08:00",
+          "end": "23:00",
+          "timezone": "Europe/Stockholm"
+        },
+        "prompt": "Briefly check: any blockers, pending tasks, or reminders?"
+      },
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      }
     }
   },
   "tools": {
