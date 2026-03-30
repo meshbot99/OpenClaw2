@@ -1,6 +1,5 @@
 # Secrets
 .env
-openclaw.json
 credentials/
 agents/**/auth-profiles.json
 
