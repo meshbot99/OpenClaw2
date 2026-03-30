@@ -1,0 +1,13 @@
+# Secrets
+.env
+openclaw.json
+credentials/
+agents/**/auth-profiles.json
+
+# Runtime
+workspace/
+logs/
+*.log
+
+# Misc
+*.bak
