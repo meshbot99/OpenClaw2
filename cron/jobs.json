@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "a6bee836-34c3-464d-8346-2c621d2f46c1",
+      "agentId": "main",
+      "name": "Meshy morning check-in",
+      "enabled": true,
+      "createdAtMs": 1774982607126,
+      "updatedAtMs": 1774982607126,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Europe/Stockholm"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Review progress toward signing 20 record labels. Summarize current status, key wins, blockers, and top priorities for today. Ask the user for any needed input."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1775026800000
+      }
+    },
+    {
+      "id": "4b0a8f43-83a1-4719-821e-6ffb7998b00a",
+      "agentId": "main",
+      "name": "Meshy afternoon review",
+      "enabled": true,
+      "createdAtMs": 1774982623395,
+      "updatedAtMs": 1774982623395,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 15 * * *",
+        "tz": "Europe/Stockholm"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Review today's progress toward signing 20 record labels. What has been completed, what is blocked, and what should change? Suggest the most important next actions for the rest of today."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1775048400000
+      }
+    }
+  ]
+}

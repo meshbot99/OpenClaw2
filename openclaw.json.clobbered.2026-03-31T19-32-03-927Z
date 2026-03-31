@@ -168,13 +168,20 @@
       "groupPolicy": "allowlist",
       "streaming": "partial",
       "accounts": {
-        "default": {
+        // "default": {
+        //   "enabled": true,
+        //   "dmPolicy": "pairing",
+        //   "botToken": "${TELEGRAM_BOT_TOKEN}",
+        //   "groupPolicy": "allowlist",
+        //   "streaming": "partial"
+        // },
+        "meshy": {
           "enabled": true,
           "dmPolicy": "pairing",
           "botToken": "${TELEGRAM_BOT_TOKEN_MESHY}",
           "groupPolicy": "allowlist",
           "streaming": "partial"
-        },
+        }
         "the_boss": {
           "enabled": true,
           "dmPolicy": "pairing",
