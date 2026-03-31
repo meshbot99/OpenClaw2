@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.28",
+    "lastTouchedAt": "2026-03-31T12:26:41.235Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-30T14:21:04.650Z",
+    "lastRunVersion": "2026.3.24",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "openai:default": {
+        "provider": "openai",
+        "mode": "api_key"
+      },
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      },
+      "gemini:default": {
+        "provider": "gemini",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/gpt-4.1"
+      },
+      "models": {
+        "openai/gpt-5.4": {
+          "alias": "gpt-5.4"
+        },
+        "openai/gpt-4.1": {
+          "alias": "gpt-4.1"
+        },
+        "openai/gpt-4.1-mini": {
+          "alias": "gpt-4.1-mini"
+        },
+        "anthropic/claude-opus-4-6": {
+          "alias": "opus",
+          "params": {
+            "cacheRetention": "long"
+          }
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "alias": "sonnet",
+          "params": {
+            "cacheRetention": "short"
+          }
+        },
+        "anthropic/claude-haiku-4-5": {
+          "alias": "haiku"
+        },
+        "google/gemini-2.5-pro": {
+          "alias": "gemini-2.5-pro"
+        },
+        "google/gemini-2.5-flash": {
+          "alias": "gemini-2.5-flash"
+        },
+        "google/gemini-2.5-flash-lite": {
+          "alias": "gemini-2.5-lite"
+        }
+      },
+      "workspace": "/Users/meshbot/.openclaw/workspace",
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "4h"
+      },
+      "compaction": {
+        "memoryFlush": {
+          "enabled": true,
+          "softThresholdTokens": 4000
+        }
+      },
+      "heartbeat": {
+        "every": "55m",
+        "activeHours": {
+          "start": "08:00",
+          "end": "23:00",
+          "timezone": "Europe/Stockholm"
+        },
+        "model": "google/gemini-2.5-flash-lite",
+        "session": "main",
+        "prompt": "Briefly check: any blockers, pending tasks, or reminders?",
+        "lightContext": true,
+        "isolatedSession": true
+      }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "the-boss",
+        "name": "the-boss",
+        "workspace": "/Users/meshbot/.openclaw/workspace-the-boss",
+        "agentDir": "/Users/meshbot/.openclaw/agents/the-boss/agent"
+      }
+    ]
+  },
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "firecrawl"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "groupPolicy": "allowlist",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "${OPENCLAW_GATEWAY_TOKEN}"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "memory": {
+    "backend": "qmd",
+    "qmd": {
+      "command": "/Users/meshbot/bin/qmd-node22"
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "notion": {
+        "apiKey": "${NOTION_API_KEY}"
+      },
+      "openai-whisper-api": {
+        "apiKey": "${OPENAI_WHISPER_API_KEY}"
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "firecrawl": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "${FIRECRAWL_API_KEY}"
+          }
+        }
+      }
+    }
+  }
+}
